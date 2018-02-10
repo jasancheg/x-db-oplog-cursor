@@ -1,6 +1,7 @@
 {
   "name": "x-db-oplog-cursor",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "private": true,
   "description": "Create MongoDB oplog cursors",
   "author": {
     "name": "Jose Antonio Sanchez Gonzalez",
@@ -9,7 +10,8 @@
   "homepage": "https://github.com/jasancheg/x-db-oplog-cursor",
   "main": "index.js",
   "scripts": {
-    "test": "xo & make test"
+    "test": "make test",
+    "lint": "./node_modules/.bin/xo"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,11 @@
   "pre-commit": [
     "test"
   ],
+  "license": "© Jose Antonio Sanchez",
+  "engines": {
+    "node": "^9.3.0",
+    "npm": "^5.6.0"
+  },
   "xo": {
     "extends": [
       "prettier"
@@ -49,7 +56,10 @@
       "no-useless-escape": 0,
       "no-unused-vars": 0,
       "new-cap": 0
+    },
+    "env": {
+      "es6": true,
+      "node": true
     }
-  },
-  "license": ""
+  }
 }

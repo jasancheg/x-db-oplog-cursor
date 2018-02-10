@@ -1,11 +1,29 @@
 # x-db-oplog-cursor
 
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+
+> Version: 0.1.0.
+>
+> Updated: Feb 10, 2018. 4:24 pm UTC-6
+>
+> Status: completed
+
 Create mongo oplog cursors.
+
+## Features
+
+* The package has a very small footprint and requires just a few dependencies including `mongodb`, `debug` and `eventemitter3`.
+* Built on top of the native NodeJS [MongoDB driver](https://github.com/mongodb/node-mongodb-native/).
+* Support start and stop tailing the MongoDB `oplog` at any time.
+* Support filtering `oplog` events by `namespaces` (database and collections).
+* Uses `eventemitter3` for high performance event emitting.
+* Strict and readable code enforced with [xo](https://github.com/sindresorhus/xo)
+* Unit tested with `mocha`
 
 ## Installation
 
 ``` bash
-$ npm install x-db-oplog-cursor
+$ npm install git@github.com:jasancheg/x-db-oplog-cursor.git
 ```
 
 ## Usage
@@ -92,3 +110,6 @@ $ npm install
 $ make test
 ```
 
+## License
+
+© 2018 [Inidea](http://inideaweb.com).  Made with ♥️  🇨🇷
