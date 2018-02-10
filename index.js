@@ -12,7 +12,7 @@ const cursor = {
 };
 
 module.exports = Factory;
-/////////////////////////
+/** ****************** */
 
 /**
  * Create cursor object.
@@ -57,9 +57,7 @@ function create(options) {
  * @return {Cursor} this
  * @api private
  */
-function init(options = {}) {
-  const { db, ns, ts, coll } = options;
-
+function init({ db, ns, ts, coll }) {
   if (!db) throw new Error('Mongo db is missing.');
 
   this.db = db;
@@ -83,6 +81,7 @@ function get(fn) {
   const query = {};
 
   if (ns) query.ns = { $regex: regex(ns) };
+
   this.timestamp((err, ts) => {
     if (err) return fn(err);
 
@@ -95,6 +94,7 @@ function get(fn) {
     newCursor.addCursorFlag('noCursorTimeout', true);
     newCursor.setCursorOption('numberOfRetries', Number.MAX_VALUE);
 
+    debug('Success', 'New cursor created');
     fn(null, newCursor);
   });
 
@@ -108,10 +108,10 @@ function get(fn) {
  * @api private
  */
 function timestamp(fn) {
-  var ts = this.ts;
-  var coll = this.coll;
+  const coll = this.coll;
+  let ts = this.ts;
 
-  if (ts) return fn(null, 'number' !== typeof ts ? ts : Timestamp(0, ts));
+  if (ts) return fn(null, typeof ts !== 'number' ? ts : Timestamp(0, ts));
 
   coll
     .find({}, { ts: 1 })
@@ -120,8 +120,9 @@ function timestamp(fn) {
     .next((err, doc) => {
       if (err) return fn(err);
 
-      if (doc) ts = doc.ts;
-      else ts = Timestamp(0, (Date.now() / 1000 | 0));
+      ts = doc
+         ? doc.ts
+         : Timestamp(0, (Date.now() / 1000 | 0));
 
       fn(null, ts);
     });

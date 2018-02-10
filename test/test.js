@@ -3,10 +3,11 @@
 /**
  * Module dependencies.
  */
-const MongoClient = require('mongodb').MongoClient;
-const MongoOplogCursor = require('../');
 const Stream = require('stream');
 const should = require('should');
+
+const MongoClient = require('mongodb').MongoClient;
+const MongoOplogCursor = require('../');
 
 // Connection URL
 const url = 'mongodb://127.0.0.1:27017';
@@ -33,7 +34,7 @@ describe('x-db-oplog-cursor', () => {
 
   //
   it('should have required methods', done => {
-    var cursor = MongoOplogCursor({ db });
+    const cursor = MongoOplogCursor({ db });
     cursor.cursor.should.be.a.Function;
     done();
   });

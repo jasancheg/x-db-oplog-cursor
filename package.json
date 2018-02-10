@@ -9,7 +9,7 @@
   "homepage": "https://github.com/jasancheg/x-db-oplog-cursor",
   "main": "index.js",
   "scripts": {
-    "test": "make test"
+    "test": "xo & make test"
   },
   "repository": {
     "type": "git",
@@ -21,10 +21,35 @@
     "x-timestamp-bson": "git@github.com:jasancheg/x-timestamp-bson.git"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^2.9.0",
     "mocha": "^5.0.0",
     "mongodb": "^3.0.2",
     "pre-commit": "^1.2.2",
-    "should": "^13.2.1"
+    "should": "^13.2.1",
+    "xo": "^0.18.2"
+  },
+  "pre-commit": [
+    "test"
+  ],
+  "xo": {
+    "extends": [
+      "prettier"
+    ],
+    "ignores": [
+    ],
+    "globals": [
+      "describe",
+      "before",
+      "after",
+      "it"
+    ],
+    "rules": {
+      "no-unused-expressions": 0,
+      "no-negated-condition": 0,
+      "no-useless-escape": 0,
+      "no-unused-vars": 0,
+      "new-cap": 0
+    }
   },
   "license": ""
 }
