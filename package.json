@@ -1,10 +1,10 @@
 {
-  "name": "x-db-oplog-cursor",
-  "version": "0.1.0",
+  "name": "x-mongo-db-cursor-stream",
+  "version": "0.1.1",
   "private": true,
   "description": "Create MongoDB oplog cursors",
   "author": {
-    "name": "Jose Antonio Sanchez Gonzalez",
+    "name": "Jose Antonio Sanchez",
     "email": "jasancheg@gmail.com"
   },
   "homepage": "https://github.com/jasancheg/x-db-oplog-cursor",
@@ -20,7 +20,7 @@
   "dependencies": {
     "debug": "^3.1.0",
     "eventemitter3": "^3.0.1",
-    "x-timestamp-bson": "git@github.com:jasancheg/x-timestamp-bson.git"
+    "x-timestamp-bson": "https://github.com/jasancheg/x-timestamp-bson.git"
   },
   "devDependencies": {
     "eslint-config-prettier": "^2.9.0",
@@ -33,7 +33,7 @@
   "pre-commit": [
     "test"
   ],
-  "license": "© Jose Antonio Sanchez",
+  "license": "MIT",
   "engines": {
     "node": "^9.3.0",
     "npm": "^5.6.0"
@@ -42,8 +42,7 @@
     "extends": [
       "prettier"
     ],
-    "ignores": [
-    ],
+    "ignores": [],
     "globals": [
       "describe",
       "before",

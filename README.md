@@ -1,10 +1,8 @@
-# x-db-oplog-cursor
+# x-mongo-db-cursor-stream
 
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
 > Version: 0.1.0.
->
-> Updated: Feb 10, 2018. 4:24 pm UTC-6
 >
 > Status: completed
 
@@ -23,13 +21,13 @@ Create mongo oplog cursors.
 ## Installation
 
 ``` bash
-$ npm install git@github.com:jasancheg/x-db-oplog-cursor.git
+$ npm install https://github.com/jasancheg/x-mongo-db-cursor-stream.git
 ```
 
 ## Usage
 
 ``` javascript
-const MongoCursor = require('x-db-oplog-cursor');
+const MongoCursor = require('x-mongo-db-cursor-stream');
 const { MongoClient } = require('mongodb');
 const { log } = console;
 
@@ -112,4 +110,4 @@ $ make test
 
 ## License
 
-© 2018 [Inidea](http://inideaweb.com).  Made with ♥️  🇨🇷
+© 2018 MIT License.  Made with ♥️  -  🇨🇷 - [Inidea](http://inideaweb.com) - [Tonisan](http://tonisan.com).
